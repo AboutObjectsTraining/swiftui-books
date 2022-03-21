@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Julius Caesar.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

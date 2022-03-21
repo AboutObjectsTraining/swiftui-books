@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Romeo and Juliet.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

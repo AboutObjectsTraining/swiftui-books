@@ -1,0 +1,49 @@
+[
+    {
+        "id": "6338E8F7-10E8-4B68-AF66-200E6430638F",
+        "name": "William Shakespeare",
+        "books": [
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A68A",
+                "title": "A Midsummer Night's Dream",
+                "year": 1601
+            },
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A68B",
+                "title": "Romeo and Juliet",
+                "year": 1599
+            },
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A68E",
+                "title": "Julius Caesar",
+                "year": 1602
+            },
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A68F",
+                "title": "Much Ado About Nothing",
+                "year": 1597
+            },
+        ]
+    },
+    {
+        "id": "02CEF533-3878-4B18-8ECC-97866C9F263E",
+        "name": "Fyodor Dostoevsky",
+        "books": [
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A68C",
+                "title": "The Brothers Karamozov",
+                "year": 1869
+            },
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A68D",
+                "title": "Crime and Punishment",
+                "year": 1872
+            },
+            {
+                "id": "F345D178-F31B-4D71-9FBD-A684A974A69A",
+                "title": "The Possessed",
+                "year": 1872
+            },
+        ]
+    },
+]
