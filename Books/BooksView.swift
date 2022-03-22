@@ -52,13 +52,10 @@ struct BookSummaryCell: View {
             }
             .layoutPriority(1)
             Spacer()
-            Button(action: { isEditing = true },
-                   label: { Image(systemName: "info.circle")
-                    .foregroundColor(.blue) }
-            )
-            .padding(.horizontal, Configuration.Cell.Button.padding)
-            .sheet(isPresented: $isEditing,
-                   content: { EditBookView(isEditing: $isEditing, book: book) })
+            Button(action: { isEditing = true }, label: { ButtonLabels.info })
+                .padding(.horizontal, Configuration.Cell.Button.padding)
+                .sheet(isPresented: $isEditing,
+                       content: { EditBookView(isEditing: $isEditing, book: book) })
         }
     }
 }

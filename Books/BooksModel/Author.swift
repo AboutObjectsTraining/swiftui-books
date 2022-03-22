@@ -12,7 +12,6 @@ final class Author: ObservableObject, Codable, Identifiable, CustomStringConvert
     }
     
     var id: UUID = UUID()
-    // TODO: Encode/decode rating
     @Published var name: String
     @Published var books: [Book]
     @Published var rating: Rating = .none

@@ -39,10 +39,7 @@ struct BookCoversView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: { isShowingGrid.toggle() },
-                           label: { isShowingGrid ?
-                        Image(systemName: "square.grid.3x3.fill") :
-                        Image(systemName: "square.grid.3x3")
-                    })
+                           label: { ButtonLabels.grid(isShowing: isShowingGrid) })
                 }
             }
         }

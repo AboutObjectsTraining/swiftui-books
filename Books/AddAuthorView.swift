@@ -18,10 +18,10 @@ struct AddAuthorView: View {
             .navigationBarTitle("Add Author")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: cancel, label: { Text("Cancel") })
+                    Button(action: cancel, label: { ButtonLabels.cancel })
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: addAuthor, label: { Text("Done") })
+                    Button(action: addAuthor, label: { ButtonLabels.done })
                 }
             }
         }

@@ -23,7 +23,6 @@ enum Rating: Int, CaseIterable, Identifiable, Codable {
             case .three: return "⭑⭑⭑⭐︎⭐︎"
             case .four : return "⭑⭑⭑⭑⭐︎"
             case .five : return "⭑⭑⭑⭑⭑"
-                
         }
     }
 }

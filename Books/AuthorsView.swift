@@ -18,7 +18,7 @@ struct AuthorsView: View {
             .navigationBarTitle("Authors")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: addAuthor, label: { Image(systemName: "plus") })
+                    Button(action: addAuthor, label: { ButtonLabels.plus })
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()

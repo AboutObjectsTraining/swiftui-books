@@ -32,7 +32,7 @@ struct EditBookView: View {
             .navigationBarTitle("Edit Book")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: done, label: { Text("Done") })
+                    Button(action: done, label: { ButtonLabels.done })
                 }
             }
         }

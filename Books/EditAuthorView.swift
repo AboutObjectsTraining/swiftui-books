@@ -18,7 +18,7 @@ struct EditAuthorView: View {
             .navigationBarTitle("Edit Author")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: done, label: { Text("Done") })
+                    Button(action: done, label: { ButtonLabels.done })
                 }
             }
         }
