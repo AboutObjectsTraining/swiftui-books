@@ -49,7 +49,7 @@ class ReadingListStore: ObservableObject
         
         // Decode authors array from JSON data.
         readingListSubscription = readingListDataFuture
-            .decode(type: ReadingList.self, decoder: JSONDecoder())
+            .decode(type: ReadingList.self, decoder: decoder)
             .print()
             .receive(on: DispatchQueue.main)
             .sink {

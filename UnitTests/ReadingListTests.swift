@@ -177,17 +177,16 @@ final class ReadingListTests: XCTestCase
             }
         }
         
-        let cancellable = future
+        let subscription = future
             .receive(on: DispatchQueue.main)
             .sink {
-                print($0) // error
+                print("Completion: \($0)")
                 expectation.fulfill()
             } receiveValue: {
                 print($0) // data
-                expectation.fulfill()
             }
         
-        print("Cancellable is \(cancellable)")
+        print("Subscription is \(subscription)")
         wait(for: [expectation], timeout: 1)
     }
 
@@ -206,21 +205,74 @@ final class ReadingListTests: XCTestCase
             }
         }
         
-        let cancellable = future
+        let subscription = future
             .receive(on: DispatchQueue.main)
             .decode(type: [Author].self, decoder: JSONDecoder())
             .sink {
-                print($0) // fatalError($0)
+                print("Completion: \($0)")
                 expectation.fulfill()
             } receiveValue: {
                 $0.forEach {
                     print($0.name)
                 }
                 print($0) // authors = $0
-                expectation.fulfill()
             }
         
-        print("Cancellable is \(cancellable)")
+        print("Subscription is \(subscription)")
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func testDataTaskWithFileUrl() {
+        let expectation = XCTestExpectation()
+        
+        let publisher = URLSession.shared.dataTaskPublisher(for: jsonFile.documentUrl)
+        
+        let subscription = publisher
+            .receive(on: DispatchQueue.main)
+            .tryMap { data, response -> Data in
+                data
+            }
+            .decode(type: ReadingList.self, decoder: JSONDecoder())
+            .sink {
+                print("Completion: \($0)")
+                expectation.fulfill()
+            } receiveValue: {
+                print($0)
+            }
+        
+        print("Subscription is \(subscription)")
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    
+    func testDataTaskWithImageFileUrl() {
+        let projectPath = "/Users/jonathanlehr/Developer/Courseware/SwiftUI/swiftui-books"
+        let assetsPath = "Books/BookCovers.xcassets"
+        
+//        let imageFilePath =  "\(projectPath)/\(assetsPath)/1984.imageset/1984.jpg"
+        let imageFilePath =  "\(projectPath)/\(assetsPath)/The Odyssey.imageset/The Odyssey.jpg"
+
+        let imageFileUrl = URL(fileURLWithPath: imageFilePath)
+        let expectation = XCTestExpectation()
+        
+        print(imageFileUrl)
+        
+        let publisher = URLSession.shared.dataTaskPublisher(for: imageFileUrl)
+        
+        let subscription = publisher
+            .receive(on: DispatchQueue.main)
+            .tryMap { data, response -> UIImage? in
+                UIImage(data: data)
+            }
+            .sink {
+                print("Completion: \($0)")
+                expectation.fulfill()
+            } receiveValue: {
+                print($0!)
+            }
+        
+        print("Subscription is \(subscription)")
         wait(for: [expectation], timeout: 1)
     }
 }
+
